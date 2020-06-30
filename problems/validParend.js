@@ -17,7 +17,7 @@
 //         ^
 
 // set up our function and take in the string to validate
-const isValid = function (string) {
+const isValid = (string) => {
   // validParens as object '(', ')', '{', '}', '[', ']'
   const validParens = {
     '{': '}',
