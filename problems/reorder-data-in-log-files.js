@@ -60,7 +60,7 @@ const reorderLogFiles = (logs) => {
   // loop over log lines
   logs.forEach((lineStr) => {
     // if line contents is not a number
-    if (isNaN(lineStr.split(' ')[1][0])) {
+    if (Number.isNaN(lineStr.split(' ')[1][0])) {
       // function place item in array
       placeInOrder(lineStr, arrLet);
       // else as per spec it must be a number
