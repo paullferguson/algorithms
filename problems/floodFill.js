@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-console */
 /**
  * @param {number[][]} image
  * @param {number} sr
@@ -16,17 +18,18 @@
   [1,0,1]]
 
  */
-const floodFill = function (image, sr, sc, newColor) {
+const floodFill = (image, sr, sc, newColor) => {
   // store the color at given 'sr' 'sc' location
   const testColor = image[sr][sc];
 
   if (testColor === newColor) return image;
 
   // pixelCheck function takes in the lat, log, newColor, testColor
-  (pixelCheck = (r, c) => {
+  const pixelCheck = ((r, c) => {
     // if not off grid and the color matches the testColor
-    if (r < 0 || c < 0 || r >= image.length || c >= image[r].length || image[r][c] !== testColor) {
-    } else {
+    if (!(
+      r < 0 || c < 0 || r >= image.length || c >= image[r].length || image[r][c] !== testColor
+    )) {
       // set the pixel to the newColor
       image[r][c] = newColor;
       // check pixel to N with pixelCheck
@@ -45,3 +48,5 @@ const floodFill = function (image, sr, sc, newColor) {
   // return the modified image
   return image;
 };
+
+console.log(floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2));
