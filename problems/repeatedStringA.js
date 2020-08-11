@@ -14,11 +14,9 @@ function repeatedString(s, n) {
     const remain = n % s.length;
     if (remain) {
       const aRemain = s.slice(0, remain);
-      if (aRemain) {
-        const aRemainMatch = aRemain.match(reg);
-        const aRemainCount = aRemainMatch ? aRemainMatch.length : 0;
-        return sets * aCount + aRemainCount;
-      }
+      const aRemainMatch = aRemain.match(reg);
+      const aRemainCount = aRemainMatch ? aRemainMatch.length : 0;
+      return sets * aCount + aRemainCount;
     }
     return sets * aCount;
   }
